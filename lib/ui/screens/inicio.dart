@@ -17,15 +17,13 @@ class Inicio extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Películas en cines'),
         elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon( Icons.search_outlined ),
-            // Llamamos a showSearch mandando el context y el delegate
-            onPressed: () => showSearch(context: context, delegate: Busqueda() ),
-          )
-        ],
+        leading:
+        IconButton(
+          icon: Icon( Icons.search_outlined ),
+          // Llamamos a showSearch mandando el context y el delegate
+          onPressed: () => showSearch(context: context, delegate: Busqueda() ),
+        )
       ),
       // Envolvemos en SingleChildScroolView para evitar overflow y poder hacer scroll
       body: SingleChildScrollView(
@@ -40,7 +38,6 @@ class Inicio extends StatelessWidget {
               // Se pasa la funcion a llamar cuando se necesite pagina siguiente
               paginaSiguiente: () => moviesProvider.recuperarPopulares(),
             ),
-            
           ],
         ),
       )

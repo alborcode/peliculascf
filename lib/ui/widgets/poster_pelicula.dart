@@ -37,7 +37,7 @@ class PosterPelicula extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 child: FadeInImage(
                   // Ponemos Placeholder para mostrar antes de cargar imagen
-                  placeholder: AssetImage('assets/no-image.jpg'),
+                  placeholder: AssetImage('assets/images/no-image.jpg'),
                   image: NetworkImage( movie.fullPosterImg ),
                   width: 130,
                   height: 190,
@@ -50,7 +50,7 @@ class PosterPelicula extends StatelessWidget {
           Text(
             movie.title,
             // Decimos que como mucho ponga dos lineas de texto
-            maxLines: 2,
+            maxLines: 1,
             // Añado opcion overflow para que aparezca ... si no cabe
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,

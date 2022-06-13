@@ -18,10 +18,10 @@ class MoviesProvider extends ChangeNotifier {
   String _apiKey   = 'b079d23058a29b67b1d53d510bcae8dc';
   String _baseUrl  = 'api.themoviedb.org';
   String _language = 'es-ES';
-  //String _genres   = '14 | 878';
+  String _genres   = '14 | 878';
   // String _genres   = '16'; // Animacion
   // String _genres   = '14'; // Fantasia
-  String _genres   = '878'; // Ciencia Ficcion
+  // String _genres   = '878'; // Ciencia Ficcion
 
   // Arreglos donde guardar el Response de en cartelera y populares
   List<Pelicula> enCartelera = [];
@@ -68,6 +68,7 @@ class MoviesProvider extends ChangeNotifier {
   recuperarCartelera() async {
     // La variable jsonData almacenara la llamada a recuperarJsonData
     final jsonData = await this.recuperarJsonData('3/movie/now_playing');
+    https://api.themoviedb.org/3/discover/movie
     final nowPlayingResponse = ResponseEnCines.fromJson(jsonData);
     enCartelera = nowPlayingResponse.results;
     // Al extender de ChangeNotifier podemos usar notifyListeners donde indicamos

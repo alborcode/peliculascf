@@ -25,7 +25,7 @@ class ActorCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: FadeInImage(
-              placeholder: AssetImage('assets/no-image.jpg'),
+              placeholder: AssetImage('assets/images/no-image.jpg'),
               image: NetworkImage( actor.fullPath ),
               height: 140,
               width: 100,

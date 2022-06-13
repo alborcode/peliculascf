@@ -4,10 +4,10 @@
 import 'package:flutter/material.dart';
 
 class AppTheme{
-  static const Color primario = Colors.orange;
+  static const Color primario = Colors.blueGrey;
 
   static final ThemeData miTema = ThemeData.light().copyWith(
-      primaryColor: Colors.orangeAccent[300],
+      primaryColor: Colors.blueGrey[300],
       appBarTheme: const AppBarTheme(
           color: primario,
           elevation: 0

@@ -23,7 +23,7 @@ class PeliculaEncontrada extends StatelessWidget {
         tag: movie.heroId!,
         // Ponemos un FadeinImage para que cargue una imagen mientras carga
         child: FadeInImage(
-          placeholder: AssetImage('assets/no-image.jpg'),
+          placeholder: AssetImage('assets/images/no-image.jpg'),
           image: NetworkImage( movie.fullPosterImg ),
           width: 50,
           fit: BoxFit.contain,

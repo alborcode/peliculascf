@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 // Importamos Modelos
 import 'package:peliculascf/models/models.dart';
+// Importamos Utilidades
+import 'package:peliculascf/ui/utils/utils.dart';
 
 class PosterTitulo extends StatelessWidget {
   final Pelicula movie;
@@ -24,7 +26,7 @@ class PosterTitulo extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
-                placeholder: AssetImage('assets/no-image.jpg'),
+                placeholder: AssetImage('assets/images/no-image.jpg'),
                 image: NetworkImage( movie.fullPosterImg ),
                 height: 150,
               ),
@@ -43,7 +45,8 @@ class PosterTitulo extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2
                 ),
-                Text( movie.originalTitle,
+                //Text( movie.originalTitle,
+                Text( transformaFecha(movie.releaseDate.toString()),
                     style: textTheme.subtitle1,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2

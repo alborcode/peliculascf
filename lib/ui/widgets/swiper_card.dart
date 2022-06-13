@@ -1,5 +1,10 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_card_swipper/flutter_card_swiper.dart';
+
+//import 'package:flutter_card_swipper/flutter_card_swiper.dart';
+import 'package:card_swiper/card_swiper.dart';
+
+// Importamos Modelos
 import 'package:peliculascf/models/models.dart';
 
 
@@ -37,9 +42,11 @@ class SwiperCard extends StatelessWidget {
       child: Swiper(
         itemCount: peliculas.length,
         layout: SwiperLayout.STACK,
+        //pagination: SwiperPagination(),
+        control: SwiperControl(),
         itemWidth: size.width * 0.6,
         itemHeight: size.height * 0.4,
-        itemBuilder: ( _ , int index ) {
+        itemBuilder: ( BuildContext context , int index ) {
           final pelicula = peliculas[index];
           pelicula.heroId = 'swiper-${ pelicula.id }';
           // Envolvemos en GestureDetector para poder poner onTap al hacer click
@@ -55,7 +62,7 @@ class SwiperCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 child: FadeInImage(
                   // Carga primero la imagen de placeholder y despues la imagen
-                  placeholder: AssetImage('assets/no-image.jpg'),
+                  placeholder: AssetImage('assets/images/no-image.jpg'),
                   // Llamamos a fullPosterImg del modelo Pelicula para recuperar la ruta completa de la imagen
                   image: NetworkImage( pelicula.fullPosterImg ),
                   // Adaptamos imagen a contenedor

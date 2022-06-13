@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 // Importamos Modelos
 import 'package:peliculascf/models/models.dart';
 
-class AppBarPersonalizado extends StatelessWidget {
-  final Pelicula movie;
-  const AppBarPersonalizado( this.movie );
+class AppBarPrincipal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +14,8 @@ class AppBarPersonalizado extends StatelessWidget {
       // Tendra un tamaño mas grande inicialmente
       expandedHeight: 200,
       floating: false,
-      // Para que no desaparezca al hacer scroll
-      pinned: true,
+      // Para que desaparezca al hacer scroll
+      pinned: false,
       // Con FlexibleSpace acomodamos los hijos al Appbar
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
@@ -28,18 +26,20 @@ class AppBarPersonalizado extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           padding: EdgeInsets.only( bottom: 10, left: 10, right: 10),
           color: Colors.black12,
-          child: Text(
-            movie.title,
+          child: Text('Estrenos Peliculas CF',
             style: TextStyle( fontSize: 16 ),
             textAlign: TextAlign.center,
           ),
-        ),
-        // Añadimos como Fondo del SilverApp un FadeInImage con imagen previa
-        background: FadeInImage(
-          placeholder: AssetImage('assets/images/loading.gif'),
-          image: NetworkImage( movie.fullBackdropPath ),
-          // Decimos que ajuste la imagen a contenedor
-          fit: BoxFit.cover,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.blue,
+                  Colors.red,
+                ]
+              ),
+            )
         ),
       ),
     );
